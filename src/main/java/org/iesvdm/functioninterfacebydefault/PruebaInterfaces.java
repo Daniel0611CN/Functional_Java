@@ -15,7 +15,14 @@ public class PruebaInterfaces {
         System.out.println("longCad = " + longCad.apply("123"));
 
         UnaryOperator<String> grita = (s) -> s.toUpperCase() + "!";
+
+        Function<String, String> gritaMasEnojado = (s) -> {
+            String aux = "@#€$%" + s.toUpperCase();
+            return aux + "!";
+        };
+
         System.out.println("grita = " + grita.apply("dani"));
+        System.out.println("gritaMasEnojado = " + gritaMasEnojado.apply("dani"));
 
 
     }
