@@ -1,6 +1,7 @@
 package org.iesvdm.functioninterfacebydefault;
 
 import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.function.Supplier;
 import java.util.function.UnaryOperator;
 
@@ -23,6 +24,12 @@ public class PruebaInterfaces {
 
         System.out.println("grita = " + grita.apply("dani"));
         System.out.println("gritaMasEnojado = " + gritaMasEnojado.apply("dani"));
+
+        Predicate<Integer> esMayorEdad = (e) -> e >= 18;
+
+        Function<Integer, Boolean> esMenorDeEdad = (e) -> e < 18;
+        int edad = 2;
+        System.out.println("edad = " + edad + (esMayorEdad.test(edad) ? " es mayor " : " es menor"));
 
 
     }
