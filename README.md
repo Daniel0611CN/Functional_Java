@@ -8,8 +8,3 @@
     <p>Es por ello que como está amoldado a la estructura de la función, no dará error. Finalmente, debemos utilizar el método apply, que devolverá el valor Integer de la función</p>
 
 </div>
-<style>
-    p {
-    margin-left: 120px;    
-    }
-</style>
