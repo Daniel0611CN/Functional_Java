@@ -29,8 +29,8 @@ public class PruebaInterfaces {
 
         Function<Integer, Boolean> esMenorDeEdad = (e) -> e < 18;
         int edad = 2;
-        System.out.println("edad = " + edad + (esMayorEdad.test(edad) ? " es mayor " : " es menor"));
-
+        System.out.println("edad = " + edad + (esMayorEdad.test(edad) ? " es mayor" : " es menor")); // true - false;
+        System.out.println("edad = " + edad + (esMenorDeEdad.apply(edad) ? " es menor" : " es mayor"));
 
     }
 
