@@ -36,7 +36,7 @@ public class JavaFunctionalTest2 {
     void iterarAntesDeJAVA8() {
 
         //IMPLEMENTACIÓN CON ÍNDICE (MALA PRÁCTICA)
-        for( int i = 0; i < listaMutable.size(), i++ ) {
+        for( int i = 0; i < listaMutable.size(); i++ ) {
 
             String valor = listaMutable.get(i);
             System.out.println(valor);
@@ -44,7 +44,7 @@ public class JavaFunctionalTest2 {
         }
 
         //MEJOR UTILIZAR Iterator
-        for (Iterator<String> it = listaMutable.iterator(); it.hasNext();) {
+        for (Iterator<String> it = listaMutable.iterator(); it.hasNext();) { // EL ITERADOR SIEMPRE ES MEJOR QUE EL ÍNDICE;
             String valor = it.next();
             System.out.println(valor);
         }
@@ -59,6 +59,8 @@ public class JavaFunctionalTest2 {
         Assertions.assertTrue(true);
 
     }
+
+    // UN CONSUMER ES UN METODO QUE RECIBE INFO, PERO NO DEVUELVE NADA, Y EL SUPPLIER ES LO CONTRARIO;
 
     @Test
     void iterarDespuesDeJAVA8() {
@@ -93,13 +95,13 @@ public class JavaFunctionalTest2 {
         //          |
         //           ---------------------
         //                                V
-        listaMutable.forEach((String valor) -> { System.out.println(valor); });
+        listaMutable.forEach((String valor) -> { System.out.println(valor); }); // AQUI NO ES NECESARIO PONER STRING, YA QUE EL FOR EACH VIENE DEL METODO listaMutable, TIENE EL TIPO DEL VALOR QUE SE VA A INDICAR;
 
         //Mediante lambda (función anónima) con firma de Consumer<T> con inferencia de tipo y sin cuerpo {...}
         //          |
         //           --------
         //                   V
-        listaMutable.forEach((v) -> System.out.println(v) );
+        listaMutable.forEach((v) -> System.out.println(v) ); // TAMPOCO ES NECESARIO PONER LOS {}, CUANDO EL LAMBDA OCUPA UNA SOLA LINEA;
 
         //Mediante simplificación de lambda a referencia a método
         //                                      |

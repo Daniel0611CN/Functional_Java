@@ -55,7 +55,8 @@ public class JavaFunctionalTest1 {
         //   -------------------------------------------
         //  |
         // V
-        final double constante = 1.234;
+        final double constante = 1.234; // esta variable, actúa como un final, ya que la función anónima, la
+        // toma como final;
 
         IFuncionOperacion iFuncOperProdYConstante = new IFuncionOperacion() {
             @Override
@@ -66,6 +67,8 @@ public class JavaFunctionalTest1 {
                 return operando1 * operando2 * constante;
             }
         };
+
+        // Si nosotros aquí, modificamos la variable, la función anónima dará error;
 
         Assertions.assertEquals(1234, iFuncOperProdYConstante.operacion(10.0, 100.0));
 
