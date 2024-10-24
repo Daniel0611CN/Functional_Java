@@ -81,11 +81,12 @@ public class Main {
                 .filter(dish1 -> dish1.getCalories() > 3000)
                 .findAny();
 
-        if (dishOptHiperCal.isPresent()) System.out.println(dishOptHiperCal.get());
-        else System.out.println("Plato hipercalorico no encontrado");
+        if (dishOptHiperCal.isEmpty()) System.out.println("Plato hipercalorico no encontrado");
+        else System.out.println(dishOptHiperCal.get());
 
-        System.out.println(dishOptHiperCal.orElse(new Dish("NO_ENCONTRADO", false, 0, Dish.Type.OTHER)));
-
+//        System.out.println(dishOptHiperCal.orElse(new Dish("NO_ENCONTRADO", false, 0, Dish.Type.OTHER)));
+        dishOptHiperCal.ifPresentOrElse(dish -> System.out.println(dish),
+                                () -> System.out.println("Plato no encontrado"));
 
     }
 }
