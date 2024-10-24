@@ -1,5 +1,7 @@
 package org.iesvdm.prueba_apuntes_stream;
 
+import java.util.Objects;
+
 public class Alumno extends Persona {
 
 
@@ -29,5 +31,17 @@ public class Alumno extends Persona {
                 "curso='" + curso + '\'' +
                 ", nombre='" + nombre + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Alumno alumno = (Alumno) o;
+        return Objects.equals(curso, alumno.curso);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(curso);
     }
 }
