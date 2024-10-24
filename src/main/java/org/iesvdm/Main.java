@@ -74,6 +74,12 @@ public class Main {
                 .filter(dish1 -> dish1.isVegetarian())
                 .findAny();
 
+        menu.stream()
+                .filter(dish1 -> dish1.isVegetarian())
+                .findAny()
+                .ifPresentOrElse(dish -> System.out.println(dish),
+                        () -> System.out.println("Plato no encontrado"));
+
         if (dishOpt.isPresent()) System.out.println(dishOpt.get());
         else System.out.println("Plato no encontrado");
 
